@@ -75,8 +75,8 @@ export default function HomePage() {
       <section id="categories" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">Kategorie</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-lg">Wybierz coś wyjątkowego dla swojego przyjaciela.</p>
+            <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tight">Kategorie</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">Wybierz coś wyjątkowego dla swojego przyjaciela.</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -88,10 +88,10 @@ export default function HomePage() {
                   fill 
                   className="object-cover transition-transform duration-700 group-hover:scale-110" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 <div className="absolute bottom-6 left-6 text-white">
-                   <h3 className="text-2xl font-bold mb-1">{cat.name}</h3>
-                   <span className="text-sm font-medium text-gray-300 group-hover:text-white flex items-center gap-1 transition-colors">
+                   <h3 className="text-2xl font-bold mb-1 text-white">{cat.name}</h3>
+                   <span className="text-sm font-bold text-gray-200 group-hover:text-white flex items-center gap-1 transition-colors">
                      Zobacz produkty <ArrowRight className="w-4 h-4" />
                    </span>
                 </div>
@@ -102,14 +102,14 @@ export default function HomePage() {
       </section>
 
       {/* FEATURED PRODUCTS */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-[#FFF4EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-2">Polecane Produkty</h2>
-              <p className="text-gray-500">Najczęściej wybierane przez naszych klientów.</p>
+              <h2 className="text-3xl font-black text-gray-900 mb-2">Polecane Produkty</h2>
+              <p className="text-gray-700 font-medium">Najczęściej wybierane przez naszych klientów.</p>
             </div>
-            <Link href="/products/collar" className="hidden sm:flex items-center gap-2 text-primary font-bold hover:text-pink-700 transition">
+            <Link href="/products/collar" className="hidden sm:flex items-center gap-2 text-gray-900 font-bold hover:text-primary transition">
               Wszystkie produkty <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -125,17 +125,17 @@ export default function HomePage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                   {product.tag && (
-                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full shadow-sm uppercase tracking-wide">
+                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur text-xs font-bold px-3 py-1 rounded-full shadow-sm uppercase tracking-wide text-gray-900">
                       {product.tag}
                     </span>
                   )}
-                  <button className="absolute bottom-3 right-3 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all hover:bg-primary hover:text-white">
+                  <button className="absolute bottom-3 right-3 bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all hover:bg-primary hover:text-white text-gray-900">
                     <ShoppingBag className="w-5 h-5" />
                   </button>
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 text-lg mb-1 group-hover:text-primary transition-colors">{product.name}</h3>
-                  <p className="text-gray-500 font-medium">{product.price}</p>
+                  <p className="text-gray-600 font-bold">{product.price}</p>
                 </div>
               </Link>
             ))}
@@ -154,25 +154,25 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-pink-50 text-primary rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#FFF4EB] text-primary rounded-full flex items-center justify-center mb-6">
                 <ShieldCheck className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Wodoodporne & Trwałe</h3>
-              <p className="text-gray-500">Materiały Hexa i BioThane odporne na każde warunki.</p>
+              <h3 className="text-xl font-black text-gray-900 mb-3">Wodoodporne & Trwałe</h3>
+              <p className="text-gray-600 font-medium leading-relaxed">Materiały Hexa i BioThane odporne na każde warunki.</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-pink-50 text-primary rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#FFF4EB] text-primary rounded-full flex items-center justify-center mb-6">
                 <Heart className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Handmade with Love</h3>
-              <p className="text-gray-500">Szyte ręcznie z dbałością o każdy szew.</p>
+              <h3 className="text-xl font-black text-gray-900 mb-3">Handmade with Love</h3>
+              <p className="text-gray-600 font-medium leading-relaxed">Szyte ręcznie z dbałością o każdy szew.</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-pink-50 text-primary rounded-full flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-[#FFF4EB] text-primary rounded-full flex items-center justify-center mb-6">
                 <Star className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Personalizacja</h3>
-              <p className="text-gray-500">Tysiące kombinacji kolorów i okuć do wyboru.</p>
+              <h3 className="text-xl font-black text-gray-900 mb-3">Personalizacja</h3>
+              <p className="text-gray-600 font-medium leading-relaxed">Tysiące kombinacji kolorów i okuć do wyboru.</p>
             </div>
           </div>
         </div>

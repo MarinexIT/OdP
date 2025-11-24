@@ -49,11 +49,6 @@ export default function Header() {
               <Search className="w-6 h-6" />
             </button>
 
-            {/* Favorites / Saved */}
-            <button className="hidden sm:flex p-2 text-gray-400 hover:text-primary transition rounded-full hover:bg-gray-50" title="Zapisane projekty">
-              <Heart className="w-6 h-6" />
-            </button>
-
             {/* Account */}
             <Link href="/login" className="p-2 text-gray-400 hover:text-primary transition rounded-full hover:bg-gray-50" title="Moje konto">
               <User className="w-6 h-6" />
