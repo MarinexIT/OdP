@@ -31,22 +31,23 @@ export async function POST(request: Request) {
 
     // 1. Obliczamy sumę
     const totalAmount = items.reduce((acc: number, item: any) => acc + (item.price * item.quantity), 0);
+    
+    // Generujemy ID zamówienia ręcznie
+    const orderId = crypto.randomUUID();
 
     // 2. Zapisujemy zamówienie w Supabase (status: pending)
-    const { data: order, error: dbError } = await supabase
+    const { error: dbError } = await supabase
       .from('orders')
       .insert({
+        id: orderId,
         total_amount: totalAmount,
         currency: 'EUR',
         status: 'pending',
-        items: items // Zapisujemy cały JSON koszyka
-      })
-      .select()
-      .single();
+        items: items 
+      });
 
     if (dbError) {
       console.error("Supabase Error:", dbError);
-      // Kontynuujemy mimo błędu bazy, żeby nie blokować sprzedaży (ale warto to logować)
     }
 
     // 3. Tworzymy sesję Stripe
@@ -60,17 +61,15 @@ export async function POST(request: Request) {
       },
       line_items: lineItems,
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/success?session_id={CHECKOUT_SESSION_ID}&order_id=${order?.id}`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/success?session_id={CHECKOUT_SESSION_ID}&order_id=${orderId}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/pl/cart`,
       metadata: {
-          order_id: order?.id || "unknown", // Przekazujemy ID zamówienia do Stripe
+          order_id: orderId,
       }
     });
 
-    // 4. Aktualizujemy zamówienie o ID sesji Stripe (opcjonalne, dla wygody)
-    if (order?.id) {
-        await supabase.from('orders').update({ stripe_session_id: session.id }).eq('id', order.id);
-    }
+    // 4. Aktualizujemy zamówienie o ID sesji Stripe
+    await supabase.from('orders').update({ stripe_session_id: session.id }).eq('id', orderId);
 
     return NextResponse.json({ url: session.url });
   } catch (error: any) {

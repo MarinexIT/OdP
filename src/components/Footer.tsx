@@ -14,7 +14,7 @@ export default function Footer() {
                        src="https://odwalonypupil.com/wp-content/uploads/elementor/thumbs/cropped-LOGO_odwalony_pupil-r9052t4r4t9iw7eyyx3sycaz3vyn5vrq9b2pwg0z5q.png" 
                        alt="Odwalony Pupil" 
                        fill 
-                       className="object-contain object-left brightness-0 invert" // Logo na biało (invert)
+                       className="object-contain object-left"
                        unoptimized
                      />
                 </div>
