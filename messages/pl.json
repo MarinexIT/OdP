@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "title": "Odwalony Pupil - Ręcznie robione akcesoria",
+    "hero_title": "Wyjątkowe akcesoria",
+    "hero_subtitle": "Skomponuj własną obrożę, smycz lub szelki. 100% handmade.",
+    "cta_button": "Zaprojektuj teraz"
+  },
+  "Navigation": {
+    "collars": "Obroże",
+    "leashes": "Smycze",
+    "harnesses": "Szelki",
+    "about": "O nas",
+    "accessories": "Akcesoria"
+  },
+  "Product": {
+    "collar": "Obroża",
+    "leash": "Smycz",
+    "harness": "Szelki"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "title": "Odwalony Pupil - Handgemaakte Accessoires",
+    "hero_title": "Unieke accessoires",
+    "hero_subtitle": "Ontwerp uw eigen halsband, riem of tuigje. 100% handgemaakt.",
+    "cta_button": "Ontwerp nu"
+  },
+  "Navigation": {
+    "collars": "Halsbanden",
+    "leashes": "Riemen",
+    "harnesses": "Tuigjes",
+    "about": "Over ons",
+    "accessories": "Accessoires"
+  },
+  "Product": {
+    "collar": "Halsband",
+    "leash": "Riem",
+    "harness": "Tuigje"
+  }
+}

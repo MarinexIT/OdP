@@ -1,0 +1,20 @@
+{
+  "HomePage": {
+    "title": "Odwalony Pupil - Handmade Accessories",
+    "hero_title": "Unique accessories",
+    "hero_subtitle": "Design your own collar, leash or harness. 100% handmade.",
+    "cta_button": "Design now"
+  },
+  "Navigation": {
+    "collars": "Collars",
+    "leashes": "Leashes",
+    "harnesses": "Harnesses",
+    "about": "About us",
+    "accessories": "Accessories"
+  },
+  "Product": {
+    "collar": "Collar",
+    "leash": "Leash",
+    "harness": "Harness"
+  }
+}
