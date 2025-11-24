@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/routing";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,7 +9,15 @@ export default function Footer() {
             
             {/* Brand */}
             <div className="col-span-1 md:col-span-2">
-                <h3 className="text-2xl font-black text-white mb-4">ODWALONY<span className="text-primary">PUPIL</span></h3>
+                <div className="relative w-48 h-12 mb-6">
+                     <Image 
+                       src="https://odwalonypupil.com/wp-content/uploads/elementor/thumbs/cropped-LOGO_odwalony_pupil-r9052t4r4t9iw7eyyx3sycaz3vyn5vrq9b2pwg0z5q.png" 
+                       alt="Odwalony Pupil" 
+                       fill 
+                       className="object-contain object-left brightness-0 invert" // Logo na biało (invert)
+                       unoptimized
+                     />
+                </div>
                 <p className="text-gray-400 max-w-sm leading-relaxed text-sm">
                     Tworzymy akcesoria dla psów z pasją i dbałością o każdy detal. 
                     Wodoodporne, wytrzymałe i stylowe - dokładnie takie, jakich potrzebujesz.

@@ -1,18 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useCartStore } from "@/store/cart";
 import { Link } from "@/i18n/routing";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
-export default function SuccessPage() {
+function SuccessContent() {
   const clearCart = useCartStore((state) => state.clearCart);
   const searchParams = useSearchParams();
   const orderId = searchParams.get("order_id");
 
   useEffect(() => {
-    // Czyścimy koszyk po udanym powrocie ze Stripe
     clearCart();
   }, [clearCart]);
 
@@ -26,7 +25,7 @@ export default function SuccessPage() {
         <h1 className="text-3xl font-black text-gray-900 mb-4">Dziękujemy za zamówienie!</h1>
         <p className="text-gray-500 mb-8 text-lg">
           Twoja płatność została przyjęta. Zaczynamy szyć Twoje akcesoria!
-          {orderId && <span className="block mt-2 text-sm text-gray-400">Numer zamówienia: #{orderId.slice(0, 8)}</span>}
+          {orderId && <span className="block mt-2 text-sm text-gray-400 font-mono bg-gray-50 p-2 rounded border mt-4">Numer zamówienia: #{orderId.split('-')[0]}</span>}
         </p>
 
         <div className="space-y-4">
@@ -39,6 +38,14 @@ export default function SuccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div>Ładowanie...</div>}>
+      <SuccessContent />
+    </Suspense>
   );
 }
 

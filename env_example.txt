@@ -1,0 +1,19 @@
+# Konfiguracja Stripe (Płatności)
+# Znajdziesz w Stripe Dashboard -> Developers -> API Keys
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+
+# Webhook Stripe (opcjonalne, do zapisu adresu w bazie)
+# Uzyskasz komendą: stripe listen --forward-to localhost:8000/api/webhooks/stripe
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# Adres Aplikacji
+# Lokalnie: http://localhost:8000
+# Produkcja (Vercel): https://twoja-domena.vercel.app
+NEXT_PUBLIC_BASE_URL=http://localhost:8000
+
+# Konfiguracja Supabase (Baza Danych)
+# Znajdziesz w Supabase Dashboard -> Project Settings -> API
+NEXT_PUBLIC_SUPABASE_URL=https://twoj-projekt.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+
